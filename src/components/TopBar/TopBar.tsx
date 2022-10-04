@@ -1,8 +1,16 @@
 import { ArrowDropDown, Notifications, Search } from "@material-ui/icons";
+import { useState } from "react";
 import "./Topbar.scss";
 const TopBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
+
   return (
-    <div className="topbar">
+    <div className={isScrolled ? "topbar scrolled" : "topbar"}>
       <div className="container">
         <div className="left">
           <img
