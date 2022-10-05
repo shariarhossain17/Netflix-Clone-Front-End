@@ -9,7 +9,8 @@ const List = () => {
   let listRef = useRef<HTMLDivElement>(null);
   const handleClick = (slider: string) => {
     if (slider === "left" && listRef.current !== null) {
-      listRef.current.style.transform = `translateX(230px)`;
+      const distance = listRef.current.getBoundingClientRect().x - 50 + 230;
+      listRef.current.style.transform = `translateX(${distance}px)`;
     }
   };
   return (
