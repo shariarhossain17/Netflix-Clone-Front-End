@@ -32,7 +32,8 @@
       display: flex;
       width: max-content;
       margin-top: 10px;
-      transform: translateX(300px);
+      transform: translateX(0px);
+      transition: all 1s ease;
     }
   }
 }
